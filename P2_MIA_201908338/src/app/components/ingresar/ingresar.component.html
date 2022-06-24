@@ -8,7 +8,7 @@
   >
     <h1 style="color: white">FUBOX MO'S DEVELOP</h1>
     <br />
-    <h2 style="color: whitesmoke">RECOVERY PASSWORD</h2>
+    <h2 style="color: whitesmoke">INGRESAR USUARIOS</h2>
   </div>
   <div
     class="card-body"
@@ -35,19 +35,36 @@
       </div>
     </nav>
     <!-- Aqui va el cuerpo de la pantalla -->
-    <div
-      class="container-fluid"
-    >
-      <div style="padding: 25px">
-        <h3 style="color: whitesmoke">Ingrese sus credenciales</h3>
-
+    <div class="form-container" >
+      <form (ngSubmit)="onSaveForm()" [formGroup]="contactForm">
         <div>
-        <input type="email" style="margin-top: 25px; margin-bottom: 15px;" id="pass" name="pass" required placeholder="huber.123@gmail.com">
+          <input type="text" formControlName="nombre" style="margin-top: 15px; margin-bottom: 10px;"  required placeholder="Ingrese su Nombre">
         </div>
         <div>
-        <button type="button" style="margin: 20px;" class="btn btn-dark">Mandar Solicitud</button>
+          <input type="text" formControlName="apellido" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Apellido">
         </div>
-      </div>
+        <div>
+          <input type="text" formControlName="usuario" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Usuario">
+        </div>
+        <div>
+          <input type="email" formControlName="email" style="margin-top: 25px; margin-bottom: 15px;" required placeholder="huber.123@gmail.com">
+        </div>
+        <div>
+          <input type="text" formControlName="telefono" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Telefono">
+        </div>
+        <div>
+          <input type="text" formControlName="pass" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Password">
+        </div>
+        <div>
+          <input type="date" formControlName="nacimiento" style="margin-top: 15px; margin-bottom: 10px;" required>
+        </div>
+        <div>
+          <input type="date" formControlName="ingreso" style="margin-top: 15px; margin-bottom: 10px;" required>
+        </div>
+        <div>
+          <button type="submit" style="margin: 20px;" class="btn btn-dark" >Ingresar Datos</button>
+        </div>
+      </form>
     </div>
   </div>
   <div

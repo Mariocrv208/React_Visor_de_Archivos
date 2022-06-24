@@ -1,0 +1,26 @@
+{
+  "usuarios": [
+    {
+       "User": "root",
+       "Nombre": "root",
+       "Apellido": "root",
+       "Email": "root.123@gmail.com",
+       "Telefono": "12345678",
+       "Password": "Mrod.123",
+       "Nacimiento": "02/03/2000",
+       "Registro": "26/06/2022",
+       "permisos": "1"
+    },
+    {
+       "User": "mcrv208",
+       "Nombre": "Mario",
+       "Apellido": "Rodriguez",
+       "Email": "mario.crv208@gmail.com",
+       "Telefono": "41647994",
+       "Password": "Marc.208",
+       "Nacimiento": "20/08/2000",
+       "Registro": "24/06/2022",
+       "permisos": "0"
+    }
+  ]
+}

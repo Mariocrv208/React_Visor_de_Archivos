@@ -8,7 +8,10 @@ import { ErroresComponent } from './components/errores/errores.component';
 import { SimbolosComponent } from './components/simbolos/simbolos.component';
 import { ASTComponent } from './components/ast/ast.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RecoveryComponent } from './components/recovery/recovery.component';
+import { IngresarComponent } from './components/ingresar/ingresar.component';
+import { ModificarComponent } from './components/modificar/modificar.component';
 
 
 @NgModule({
@@ -18,12 +21,15 @@ import { RecoveryComponent } from './components/recovery/recovery.component';
     ErroresComponent,
     SimbolosComponent,
     ASTComponent,
-    RecoveryComponent
+    RecoveryComponent,
+    IngresarComponent,
+    ModificarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [  ],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@
   >
     <h1 style="color: white">FUBOX MO'S DEVELOP</h1>
     <br />
-    <h2 style="color: whitesmoke">LOGIN</h2>
+    <h2 style="color: whitesmoke">MODIFICAR USUARIO</h2>
   </div>
   <div
     class="card-body"
@@ -28,37 +28,36 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <button type="button" class="btn btn-dark" (click)="router.navigate(['/ast']);">Access Denied</button>
+              <button type="button" class="btn btn-dark" (click)="router.navigate(['/simbolos']);">Regresar</button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- Aqui va el cuerpo de la pantalla -->
-    <div
-      class="container-fluid"
-    >
-      <div style="padding: 25px">
-        <h3 style="color: whitesmoke">Ingrese sus credenciales</h3>
-        <div class="form-container" >
-        <form (ngSubmit)="validarDatos()" [formGroup]="contactForm">
-          <div>
-            <input type="text"  formControlName="user" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su usuario">
-            </div>
-            <div>
-            <input type="text" formControlName="pass" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Password">
-            </div>
-            <div>
-              <button type="submit" style="margin: 20px;" class="btn btn-dark" >Iniciar Sesion</button>
-            </div>
-        </form>
-      </div>
-
-        <button type="button" style="margin: 20px;" class="btn btn-dark"  (click)="router.navigate(['/ingresarUsu']);">Ingresar Usuario</button>
-        <button type="button" style="margin: 20px;" class="btn btn-dark" (click)="router.navigate(['/recoveryPass']);">Recovery Password</button>
+    <div class="form-container" >
+      <form (ngSubmit)="onSaveForm()" [formGroup]="contactForm">
+        <div>
+          <input type="text" formControlName="nombre" style="margin-top: 15px; margin-bottom: 10px;"  [ngModel]="nombre">
         </div>
-      </div>
+        <div>
+          <input type="text" formControlName="apellido" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="apellido">
+        </div>
+        <div>
+          <input type="text" formControlName="usuario" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="user">
+        </div>
+        <div>
+          <input type="email" formControlName="email" style="margin-top: 25px; margin-bottom: 15px;" [ngModel]="mail">
+        </div>
+        <div>
+          <input type="text" formControlName="telefono" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="telefono">
+        </div>
+        <div>
+          <button type="submit" style="margin: 20px;" class="btn btn-dark" >Ingresar Datos</button>
+        </div>
+      </form>
     </div>
+  </div>
   <div
     class="card-footer text-muted"
     style="

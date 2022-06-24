@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 
 @Component({
@@ -9,16 +10,24 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
+  idrecibir: any;
   nombreArchivo: string = "Archivo...";
   resultado: any = 'Contenido...';
   selectedFile = null;
   consola:string = "Esperando Accion...";
 
+
+
+
   constructor(
-    public router: Router
+    public router: Router,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    let recibir = this.activatedRoute.snapshot.paramMap.get("id");
+    this.idrecibir = recibir?.toString();
+    console.log(this.idrecibir);
   }
 
 
@@ -42,17 +51,9 @@ export class NavigationComponent implements OnInit {
     }
 }
 
-/*DescargarArchivo() {
-  const datos = [];
-  datos.push(this.resultado);
-  const filepath = window.URL.createObjectURL(new Blob(datos, {type:"cst"}));
-  const linkDescarga = document.createElement('a');
-  linkDescarga.href = filepath;
-  linkDescarga.setAttribute('download', this.nombreArchivo);
-  document.body.appendChild(linkDescarga);
-  linkDescarga.click();
-  this.consola = "Archivo Descargado Exitosamente";
-}*/
-
+mandarModificar(){
+  console.log(this.idrecibir);
+  this.router.navigate(['/actualizar/'+this.idrecibir]);
+}
 
 }

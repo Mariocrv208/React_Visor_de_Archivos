@@ -1,0 +1,13 @@
+{
+   "usuarios": {
+      "User": "root",
+      "Nombre": "root",
+      "Apellido": "root",
+      "Email": "root.123@gmail.com",
+      "Telefono": "12345678",
+      "Password": "Mrod.123",
+      "Nacimiento": "02/03/2000",
+      "Registro": "26/06/2022",
+      "permisos": "1"
+   }
+}
