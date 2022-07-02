@@ -25,6 +25,10 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NewArchComponent } from './components/new-arch/new-arch.component';
+import { ModifyArchComponent } from './components/modify-arch/modify-arch.component';
 
 
 
@@ -38,6 +42,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     RecoveryComponent,
     IngresarComponent,
     ModificarComponent,
+    AdminPageComponent,
+    NewArchComponent,
+    ModifyArchComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +62,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     providePerformance(() => getPerformance()),
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage()),
+    NoopAnimationsModule,
   ],
   providers: [
     AuthService,

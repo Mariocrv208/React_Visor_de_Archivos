@@ -1,0 +1,46 @@
+<div class="card text-center">
+  <div
+    class="card-header"
+    style="
+      background-image: url('https://www.xtrafondos.com/wallpapers/vertical/estructura-abstracta-3d-gris-oscuro-3593.jpg');
+      min-height: 100%;
+    "
+  >
+    <h1 style="color: white">FUBOX MO'S DEVELOP</h1>
+    <br />
+    <h2 style="color: whitesmoke">MODIFICAR ARCHIVO</h2>
+  </div>
+  <div
+    class="card-body"
+    style="
+      background-image: url('https://www.teahub.io/photos/full/175-1758135_fondo-de-pantalla-tema-oscuro.jpg');
+      min-height: 100%;
+    "
+  >
+    <!-- Aqui va el cuerpo de la pantalla -->
+    <div class="form-container" >
+      <form (ngSubmit)="onSaveForm()" [formGroup]="contactForm">
+        <div>
+          <input type="text" formControlName="Ruta" style="margin-top: 15px; margin-bottom: 10px;"  required placeholder="Ingrese la nueva ruta">
+        </div>
+        <div>
+          <button type="submit" style="margin: 20px;" class="btn btn-dark" >Ingresar Datos</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div
+    class="card-footer text-muted"
+    style="
+      background-image: url('https://ayvisa.es/wp-content/uploads/2021/04/fondos-de-pantalla-oscuros-1280x500.jpg');
+      background-size: contain;
+    "
+  >
+    <h5 style="color: whitesmoke">
+      Mario Jose Rodriguez <br />
+      Vasquez 201908338 <br />
+      USAC 2022
+    </h5>
+  </div>
+</div>
+

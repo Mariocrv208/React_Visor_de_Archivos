@@ -8,7 +8,7 @@
   >
     <h1 style="color: white">FUBOX MO'S DEVELOP</h1>
     <br />
-    <h2 style="color: whitesmoke">MODIFICAR USUARIO</h2>
+    <h2 style="color: whitesmoke">INGRESAR ARCHIVO</h2>
   </div>
   <div
     class="card-body"
@@ -38,24 +38,7 @@
     <div class="form-container" >
       <form (ngSubmit)="onSaveForm()" [formGroup]="contactForm">
         <div>
-          <label style="color: white;">Ingrese su Nombre</label><br>
-          <input type="text" formControlName="Nombre" style="margin-top: 15px; margin-bottom: 10px;"  [ngModel]="nombre">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Apellido</label><br>
-          <input type="text" formControlName="Apellido" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="apellido">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Usuario</label><br>
-          <input type="text" formControlName="User" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="user">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Email</label><br>
-          <input type="email" formControlName="Email" style="margin-top: 25px; margin-bottom: 15px;" [ngModel]="mail">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Telefono</label><br>
-          <input type="text" formControlName="Telefono" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="telefono">
+          <input type="text" formControlName="Ruta" style="margin-top: 15px; margin-bottom: 10px;"  required placeholder="Ingrese la nueva ruta">
         </div>
         <div>
           <button type="submit" style="margin: 20px;" class="btn btn-dark" >Ingresar Datos</button>

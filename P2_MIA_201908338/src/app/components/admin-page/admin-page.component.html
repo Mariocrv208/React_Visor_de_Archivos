@@ -8,7 +8,7 @@
   >
     <h1 style="color: white">FUBOX MO'S DEVELOP</h1>
     <br />
-    <h2 style="color: whitesmoke">MODIFICAR USUARIO</h2>
+    <h2 style="color: whitesmoke">PAGINA PARA ADMINISTRADORES :D</h2>
   </div>
   <div
     class="card-body"
@@ -35,33 +35,28 @@
       </div>
     </nav>
     <!-- Aqui va el cuerpo de la pantalla -->
-    <div class="form-container" >
-      <form (ngSubmit)="onSaveForm()" [formGroup]="contactForm">
-        <div>
-          <label style="color: white;">Ingrese su Nombre</label><br>
-          <input type="text" formControlName="Nombre" style="margin-top: 15px; margin-bottom: 10px;"  [ngModel]="nombre">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Apellido</label><br>
-          <input type="text" formControlName="Apellido" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="apellido">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Usuario</label><br>
-          <input type="text" formControlName="User" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="user">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Email</label><br>
-          <input type="email" formControlName="Email" style="margin-top: 25px; margin-bottom: 15px;" [ngModel]="mail">
-        </div>
-        <div>
-          <label style="color: white;">Ingrese su Telefono</label><br>
-          <input type="text" formControlName="Telefono" style="margin-top: 15px; margin-bottom: 10px;" [ngModel]="telefono">
-        </div>
-        <div>
-          <button type="submit" style="margin: 20px;" class="btn btn-dark" >Ingresar Datos</button>
-        </div>
-      </form>
-    </div>
+
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">De baja</th>
+          <th scope="col">Pendiente</th>
+        </tr>
+      </thead>
+      <tbody class="table-light">
+        <tr *ngFor="let usuario of  usuarios">
+          <td>{{usuario.id}}</td>
+          <td>{{usuario.User}}</td>
+          <td><button type="button" class="btn btn-dark" (click)="cambiarEstado(usuario.id)">{{usuario.baja}}</button></td>
+          <td>{{usuario.pendiente}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
   </div>
   <div
     class="card-footer text-muted"

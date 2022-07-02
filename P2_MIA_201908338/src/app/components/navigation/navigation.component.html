@@ -24,6 +24,7 @@
    <div style="width: 40%; float:right">
     <div id="right">
       <button type="button"  class="btn btn-dark" (click)="mandarModificar()">User Data</button>
+      <button type="button"  class="btn btn-dark" (click)="mandarAdmin()">Admin Page</button>
     </div>
    </div>
 
@@ -60,27 +61,33 @@
       </div>
     </nav>
     <!-- Aqui va el cuerpo de la pantalla -->
-    <div
-      class="container-fluid"
-    >
-      <div style="padding: 25px">
-        <h3 style="color: whitesmoke">CARGAR JSON</h3>
 
-        <textarea
-          id="inputCodigo"
-          [(ngModel)]="resultado"
-          rows="22"
-          cols="90"
-          style="
-            overflow: auto;
-            background-image: url('https://www.tuexpertomovil.com/wp-content/uploads/2020/02/fondos-de-pantalla-para-samsung-036.jpg');
-            background-size: contain;
-            color: white;
-          "
-        >
-        </textarea>
-      </div>
-    </div>
+
+    <button type="button" class="btn btn-dark" (click)="NuevoArch()">Nuevo Directorio</button>
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Ruta</th>
+          <th scope="col">Fecha Ingreso</th>
+          <th scope="col">Modificar</th>
+          <th scope="col">Eliminar</th>
+          <th scope="col">Permisos</th>
+        </tr>
+      </thead>
+      <tbody class="table-light">
+        <tr *ngFor="let archivo of  archivos">
+          <td>{{archivo.id}}</td>
+          <td>{{archivo.Ruta}}</td>
+          <td>{{archivo.Fecha}}</td>
+          <td><button type="button" class="btn btn-dark" (click)="Modificar(archivo.id)">Modificar</button></td>
+          <td><button type="button" class="btn btn-dark" (click)="Eliminar(archivo.id)">Eliminar</button></td>
+          <td><button type="button" class="btn btn-dark" (click)="Permiso(archivo.id)">{{archivo.Permiso}}</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+
   </div>
   <div
     class="card-footer text-muted"

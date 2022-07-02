@@ -3,6 +3,22 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import cargaJson from 'src/assets/json/Usuarios.json';
 import { ActivatedRoute, Params } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+const body = {
+  User: "",
+  Nombre: "",
+  Apellido: "",
+  Email: "",
+  Telefono: "",
+  Password: "",
+  Nacimiento: "",
+  Registro: "",
+  permisos: "",
+  intentos: 0,
+  baja: "",
+  id: 0
+}
 
 @Component({
   selector: 'app-modificar',
@@ -12,6 +28,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ModificarComponent implements OnInit {
 
   idrecibir: any;
+  permiso:any;
   nombre:any;
   apellido:any;
   user:any;
@@ -24,33 +41,32 @@ export class ModificarComponent implements OnInit {
 
   createFormGroup(){
     return new FormGroup({
-      nombre: new FormControl(this.nombre),
-      apellido: new FormControl(this.apellido),
-      usuario: new FormControl(this.user),
-      email: new FormControl(this.mail),
-      telefono: new FormControl(this.telefono)
+      Nombre: new FormControl(''),
+      Apellido: new FormControl(''),
+      User: new FormControl(''),
+      Email: new FormControl(''),
+      Telefono: new FormControl('')
     });
   }
 
   constructor(
     public router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private http: HttpClient,
   ) {
     this.contactForm = this.createFormGroup();
   }
 
   ngOnInit(): void {
     let recibir = this.activatedRoute.snapshot.paramMap.get("id");
-    let permiso = this.activatedRoute.snapshot.paramMap.get("permiso");
+    let permiso2 = this.activatedRoute.snapshot.paramMap.get("permiso");
     this.idrecibir = recibir?.toString();
-    this.nombre = this.carga.usuarios[this.idrecibir].Nombre;
-    this.apellido = this.carga.usuarios[this.idrecibir].Apellido;
-    this.user = this.carga.usuarios[this.idrecibir].User;
-    this.mail = this.carga.usuarios[this.idrecibir].Email;
-    this.telefono = this.carga.usuarios[this.idrecibir].Telefono;
-    if(recibir?.toString() == "0"){
-      this.router.navigate(['/ast']);
-    }
+    this.permiso = permiso2?.toString();
+    this.nombre = this.carga.ingresoUsers[this.idrecibir].Nombre;
+    this.apellido = this.carga.ingresoUsers[this.idrecibir].Apellido;
+    this.user = this.carga.ingresoUsers[this.idrecibir].User;
+    this.mail = this.carga.ingresoUsers[this.idrecibir].Email;
+    this.telefono = this.carga.ingresoUsers[this.idrecibir].Telefono;
   }
 
   onResteForm(){
@@ -58,17 +74,30 @@ export class ModificarComponent implements OnInit {
   }
 
   onSaveForm(){
-    console.log('Saved');
-    const newContact = {
-      nombre: this.contactForm.controls["nombre"].value,
-      apellido:this.contactForm.controls["apellido"].value,
-      usuario:this.contactForm.controls["usuario"].value,
-      email:this.contactForm.controls["email"].value,
-      telefono:this.contactForm.controls["telefono"].value
-    }
-    console.log(newContact);
-    this.carga.usuarios.push(newContact);
-    console.log(this.carga);''
+    body.User = this.contactForm.value.User;
+    body.Nombre = this.contactForm.value.Nombre;
+    body.Apellido = this.contactForm.value.Apellido;
+    body.Email = this.contactForm.value.Email;
+    body.Telefono = this.contactForm.value.Telefono;
+    body.Password = this.carga.ingresoUsers[this.idrecibir].Password;
+    body.Nacimiento = this.carga.ingresoUsers[this.idrecibir].Nacimiento;
+    body.Registro = this.carga.ingresoUsers[this.idrecibir].Registro;
+    body.permisos = this.carga.ingresoUsers[this.idrecibir].permisos;
+    body.baja = this.carga.ingresoUsers[this.idrecibir].baja;
+    body.intentos = this.carga.ingresoUsers[this.idrecibir].intentos;
+    console.log(this.carga.ingresoUsers[this.idrecibir]);
+    let id = this.idrecibir;
+    id++
+    console.log(id);
+    let ruta = "http://localhost:3000/ingresoUsers/" + id;
+    this.http.put<any>(ruta, body)
+    .subscribe(rest=>{
+      alert("Datos Modificados Exitosamente");
+      this.router.navigate(['/inicio/'+this.idrecibir+'/'+this.permiso]);
+
+    },err=>{
+      alert("algo salio mal pana perdon :C");
+    })
   }
 
 }
