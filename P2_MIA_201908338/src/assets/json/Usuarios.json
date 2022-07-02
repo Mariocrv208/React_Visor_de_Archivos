@@ -1,26 +1,70 @@
 {
   "usuarios": [
     {
-       "User": "root",
-       "Nombre": "root",
-       "Apellido": "root",
-       "Email": "root.123@gmail.com",
-       "Telefono": "12345678",
-       "Password": "Mrod.123",
-       "Nacimiento": "02/03/2000",
-       "Registro": "26/06/2022",
-       "permisos": "1"
+      "User": "root",
+      "Nombre": "root",
+      "Apellido": "root",
+      "Email": "root.123@gmail.com",
+      "Telefono": "12345678",
+      "Password": "Mrod.123",
+      "Nacimiento": "02/03/2000",
+      "Registro": "26/06/2022",
+      "permisos": "1"
     },
     {
-       "User": "mcrv208",
-       "Nombre": "Mario",
-       "Apellido": "Rodriguez",
-       "Email": "mario.crv208@gmail.com",
-       "Telefono": "41647994",
-       "Password": "Marc.208",
-       "Nacimiento": "20/08/2000",
-       "Registro": "24/06/2022",
-       "permisos": "0"
+      "User": "mcrv208",
+      "Nombre": "Mario",
+      "Apellido": "Rodriguez",
+      "Email": "mario.crv208@gmail.com",
+      "Telefono": "41647994",
+      "Password": "Marc.208",
+      "Nacimiento": "20/08/2000",
+      "Registro": "24/06/2022",
+      "permisos": "1"
+    }
+  ],
+  "ingresoUsers": [
+    {
+      "User": "fdsa",
+      "Nombre": "fdas",
+      "Apellido": "fdas",
+      "Email": "fdsa",
+      "Telefono": "fdsa",
+      "Password": "fdasSF@4",
+      "Nacimiento": "27/06/2022",
+      "Registro": "01/07/2022",
+      "permisos": "0",
+      "intentos": 1,
+      "baja": "1",
+      "id": 1
+    },
+    {
+      "User": "fdsa",
+      "Nombre": "fdas",
+      "Apellido": "fdas",
+      "Email": "fdsa",
+      "Telefono": "fdsa",
+      "Password": "fdasSF@4",
+      "Nacimiento": "27/06/2022",
+      "Registro": "01/07/2022",
+      "permisos": "0",
+      "intentos": 1,
+      "baja": "1",
+      "id": 2
+    },
+    {
+      "User": "prueba",
+      "Nombre": "prueba",
+      "Apellido": "prueba",
+      "Email": "prueba.com",
+      "Telefono": "5649",
+      "Password": "aF@4564",
+      "Nacimiento": "28/06/2022",
+      "Registro": "02/07/2022",
+      "permisos": "0",
+      "intentos": 0,
+      "baja": "0",
+      "id": 3
     }
   ]
 }

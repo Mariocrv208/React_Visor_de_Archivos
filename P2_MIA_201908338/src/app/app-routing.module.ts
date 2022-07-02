@@ -7,14 +7,16 @@ import { ASTComponent } from './components/ast/ast.component';
 import { RecoveryComponent } from './components/recovery/recovery.component';
 import { IngresarComponent } from './components/ingresar/ingresar.component';
 import { ModificarComponent } from './components/modificar/modificar.component';
+import { SendEmailComponent } from './backend/send-email/send-email.component';
 
 const routes: Routes = [
-  { path: 'inicio/:id', component: NavigationComponent},
+  { path: 'inicio/:id/:permiso', component: NavigationComponent},
   { path: 'simbolos', component: SimbolosComponent},
   { path: 'ast', component: ASTComponent},
   { path: 'recoveryPass', component: RecoveryComponent},
   { path: 'ingresarUsu', component: IngresarComponent},
-  { path: 'actualizar/:id', component: ModificarComponent},
+  { path: 'actualizar/:id/:permiso', component: ModificarComponent},
+  { path: 'verificationEmail', component: SendEmailComponent},
   { path: '', redirectTo: 'simbolos', pathMatch:'full'},
   { path: '**', component: ErroresComponent},
 ];

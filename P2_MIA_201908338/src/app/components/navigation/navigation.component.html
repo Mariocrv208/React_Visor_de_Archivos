@@ -8,7 +8,25 @@
   <h1 style="color: white">FUBOX MO'S DEVELOP</h1>
     <br />
     <h4 style="color: rgb(189, 54, 54)">Bienvenido a nuestra aplicación</h4>
-    <button type="button" style="margin-left: 90%;" class="btn btn-dark" (click)="mandarModificar()">User Data</button>
+
+    <div style="width: 30%; float:left">
+      <div id="left">
+        <button type="button" style="margin-right: 80%;" class="btn btn-dark" (click)="router.navigate(['/simbolos']);">Cerrar Sesion</button>
+      </div>
+   </div>
+
+   <div style="width: 30%; float:right">
+    <div id="right">
+
+      <button type="button" style="margin-left: 80%;" class="btn btn-dark" (click)="darBaja()">Dar de baja</button>
+    </div>
+   </div>
+   <div style="width: 40%; float:right">
+    <div id="right">
+      <button type="button"  class="btn btn-dark" (click)="mandarModificar()">User Data</button>
+    </div>
+   </div>
+
   </div>
   <div
     class="card-body"
@@ -36,9 +54,6 @@
             </li>
             <li class="nav-item">
               <button type="button" class="btn btn-dark" (click)="router.navigate(['/ast']);">Access Denied</button>
-            </li>
-            <li class="nav-item">
-              <button type="button" class="btn btn-dark" (click)="router.navigate(['/recoveryPass']);">Recovery</button>
             </li>
           </ul>
         </div>

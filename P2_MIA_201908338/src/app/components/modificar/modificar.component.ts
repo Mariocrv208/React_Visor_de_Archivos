@@ -41,12 +41,16 @@ export class ModificarComponent implements OnInit {
 
   ngOnInit(): void {
     let recibir = this.activatedRoute.snapshot.paramMap.get("id");
+    let permiso = this.activatedRoute.snapshot.paramMap.get("permiso");
     this.idrecibir = recibir?.toString();
     this.nombre = this.carga.usuarios[this.idrecibir].Nombre;
     this.apellido = this.carga.usuarios[this.idrecibir].Apellido;
     this.user = this.carga.usuarios[this.idrecibir].User;
     this.mail = this.carga.usuarios[this.idrecibir].Email;
     this.telefono = this.carga.usuarios[this.idrecibir].Telefono;
+    if(recibir?.toString() == "0"){
+      this.router.navigate(['/ast']);
+    }
   }
 
   onResteForm(){

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "p2mia-97e1a": {
+      "hosting": {
+        "P2_MIA_201908338": [
+          "p2mia-97e1a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "p2mia-97e1a"
+  }
+}

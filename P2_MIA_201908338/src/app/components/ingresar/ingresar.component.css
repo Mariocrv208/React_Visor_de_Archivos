@@ -1,0 +1,10 @@
+.alert-danger{
+  color: red;
+  background: pink;
+  border-color: pink;
+  margin: 5px;
+}
+
+.container-error-message{
+  padding: 3px;
+}

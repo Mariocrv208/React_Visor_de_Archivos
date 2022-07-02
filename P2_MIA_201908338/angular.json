@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "P2_MIA_201908338:build:production",
+            "firebaseProject": "p2mia-97e1a",
+            "firebaseHostingSite": "p2mia-97e1a"
+          }
         }
       }
     }

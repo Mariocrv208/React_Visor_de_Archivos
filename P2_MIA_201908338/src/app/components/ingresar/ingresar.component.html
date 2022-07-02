@@ -38,28 +38,34 @@
     <div class="form-container" >
       <form (ngSubmit)="onSaveForm()" [formGroup]="contactForm">
         <div>
-          <input type="text" formControlName="nombre" style="margin-top: 15px; margin-bottom: 10px;"  required placeholder="Ingrese su Nombre">
+          <input type="text" formControlName="Nombre" style="margin-top: 15px; margin-bottom: 10px;"  required placeholder="Ingrese su Nombre">
         </div>
         <div>
-          <input type="text" formControlName="apellido" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Apellido">
+          <input type="text" formControlName="Apellido" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Apellido">
         </div>
         <div>
-          <input type="text" formControlName="usuario" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Usuario">
+          <input type="text" formControlName="User" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Usuario">
         </div>
         <div>
-          <input type="email" formControlName="email" style="margin-top: 25px; margin-bottom: 15px;" required placeholder="huber.123@gmail.com">
+          <input type="email" formControlName="Email" style="margin-top: 25px; margin-bottom: 15px;" required placeholder="huber.123@gmail.com">
         </div>
         <div>
-          <input type="text" formControlName="telefono" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Telefono">
+          <input type="text" formControlName="Telefono" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Telefono">
         </div>
         <div>
-          <input type="text" formControlName="pass" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Password">
+          <input type="text" formControlName="Password" [(ngModel)]="password" style="margin-top: 15px; margin-bottom: 10px;" required placeholder="Ingrese su Password">
+        </div>
+        <div class="alert-danger" *ngIf="Password?.invalid && (Password?.dirty || Password?.touched)">
+          <div class="container-error-message" >
+            Campo Requerido
+          </div>
+          <div class="container-error-message">
+            *La contraseña debe tener entre 6 y 20 caracteres, contener una letra mayuscula, contener una letra minuscula,
+            contener un numero y alguno de los siguientes caracteres #!@%^&_?.,
+          </div>
         </div>
         <div>
-          <input type="date" formControlName="nacimiento" style="margin-top: 15px; margin-bottom: 10px;" required>
-        </div>
-        <div>
-          <input type="date" formControlName="ingreso" style="margin-top: 15px; margin-bottom: 10px;" required>
+          <input type="date"  formControlName="Nacimiento" style="margin-top: 15px; margin-bottom: 10px;" required >
         </div>
         <div>
           <button type="submit" style="margin: 20px;" class="btn btn-dark" >Ingresar Datos</button>
